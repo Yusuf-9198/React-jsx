@@ -270,16 +270,17 @@ A change in the data used to render a React app. Usually the result of `setState
 * **Rendering (The Hands):** Another library takes those calculations and actually draws them on the screen.
 
 ## Fibre:-
-**Problem** Normally, when a computer runs a function, it puts it on a "Call Stack." It cannot stop until the function finishes.they can't stop until they hit the bottom.
+* **Problem** Normally, when a computer runs a function, it puts it on a "Call Stack." It cannot stop until the function finishes.they can't stop until they hit the bottom.
 
-**Sloution:-* *React Fiber is like a "Smart To-Do List." Instead of running one giant function, React breaks it into small tasks and checks the time after each one.It breaks a React component down into a JavaScript object. Because it is just an object (and not a running function), React can save it in memory, pause it, and come back to it later.
+* **Sloution:-** React Fiber is like a "Smart To-Do List." Instead of running one giant function, React breaks it into small tasks and checks the time after each one.It breaks a React component down into a JavaScript object. Because it is just an object (and not a running function), React can save it in memory, pause it, and come back to it later.
+
 ## The "Virtual Stack Frame"
 Normally, when a computer runs a function, it "forgets" where it was if it stops. Fiber is special because it saves the "state" of the work in an object (a Fiber).
 
 **Key Points in Simple Terms:**
 
-**Pause & Resume**: Stop a big task to handle a small, fast task.
+* **Pause & Resume**: Stop a big task to handle a small, fast task.
 
-**Priority**: Do animations and clicks first; load background data later.
+* **Priority**: Do animations and clicks first; load background data later.
 
-**Abort**: If a user clicks "Cancel," React can literally throw away the "Biryani" half-way through instead of finishing it.
+* **Abort**: If a user clicks "Cancel," React can literally throw away the "Biryani" half-way through instead of finishing it.
