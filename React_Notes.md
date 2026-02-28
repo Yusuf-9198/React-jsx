@@ -100,3 +100,95 @@ This is where you will spend almost all of your development time.
 5.  Any change you make in `App.jsx` is instantly updated in the browser.
 
 > **Pro-Tip:** In Vite, always use the `.jsx` extension for files that contain HTML-like code so the build tool can process it correctly!
+
+## 3.Hooks
+
+### What are Hooks?
+**Hooks** are special functions that give your components "memory." 
+
+Usually, when a function finishes running, all its variables disappear. But React components need to remember things (like a counter value or a user's name) even after the function finishes. Hooks allow you to "hook" into React's internal systems to save that data.
+
+## Why Do We Use Hooks?
+
+You are correct: Hooks allow us to use state in **function components**. But here is the deeper reason **why** they were created in the first place:
+
+### 1. No More "this" Keyword
+In Class Components, you have to use `this.state` and `this.setState`. JavaScript's `this` keyword is very confusing even for experienced developers. Hooks (like `useState`) use simple variables, making the code much easier to read and write.
+
+### 2. Less "Boilerplate" Code
+Classes require a lot of extra code (constructor, super, binding methods). Hooks allow you to do the same thing with much less typing. 
+* **Class Style:** 10-15 lines of code just to start a counter.
+* **Hook Style:** Only 1 or 2 lines of code.
+
+### 3. Better Logic Sharing
+If you have a special logic (like tracking a user's location), it is hard to share that logic between two Class Components. With Hooks, you can create a **Custom Hook** and just "import" that logic wherever you need it.
+
+### 4. Cleaner Lifecycle Management
+In classes, related code is often split into different places (like `componentDidMount` and `componentWillUnmount`). With the `useEffect` hook, you can keep related code together in one block.
+
+### The `useState` Hook
+The most important hook is `useState`. Think of it like a **Variable + a Notification Bell**.
+* **The Variable (`counter`):** This is the current value.
+* **The Function (`setCounter`):** This is the only way to change the value. When you use this function, it rings a "bell" to tell React: *"Hey! The data changed. Please update the screen!"*
+
+---
+# Class Components vs. Hooks
+
+### 1. The Class Component Way (The Old Way)
+In a class, you have to use a `constructor` to set up your data and the `this` keyword to access it. It is very "wordy" (lots of extra code).
+
+
+
+```javascript
+import React, { Component } from 'react';
+
+class CounterClass extends Component {
+  constructor(props) {
+    super(props);
+    // You have to initialize state in an object
+    this.state = {
+      counter: 0
+    };
+  }
+
+  addValue = () => {
+    // You must use this.setState to update
+    this.setState({ counter: this.state.counter + 1 });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Class Component</h1>
+        <p>Value: {this.state.counter}</p>
+        <button onClick={this.addValue}>Add</button>
+      </div>
+    );
+  }
+}
+
+export default CounterClass;
+
+---
+-With Hooks, we don't need a constructor or this. We just use useState. It is much cleaner and easier to read.
+
+import React, { useState } from 'react';
+
+function CounterHook() {
+  // Simple and direct initialization
+  const [counter, setCounter] = useState(0);
+
+  const addValue = () => {
+    setCounter(counter + 1);
+  };
+
+  return (
+    <div>
+      <h1>Hooks (Functional)</h1>
+      <p>Value: {counter}</p>
+      <button onClick={addValue}>Add</button>
+    </div>
+  );
+}
+
+export default CounterHook;
