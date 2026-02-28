@@ -254,4 +254,30 @@ export default CounterHook;
  `createRoot() `// Dom create karta hai [serif ose component ko reload kar jo change hoa hai , but browser ka Dom pure page ko hi reload karta hai ]
 
 ## React Fibre:-
-- Read from(must) : https://github.com/acdlite/react-fiber-architecture
+- Read from : https://github.com/acdlite/react-fiber-architecture
+
+## what is Reconciliation?
+The algorithm React uses to diff one tree with another to determine which parts need to be changed. Algorithim behins "Virtual DOM"
+**update**
+A change in the data used to render a React app. Usually the result of `setState`. Eventually results in a re-render.
+
+* Actually re-rendering entire app onn each change is coslty in terms of performance. 
+* when you render a React application, a tree of nodes that describes the app is generated and saved in memory. This tree is then flushed to the rendering environment — for example, in the case of a browser application, it's translated to a set of DOM operations. When the app is updated (usually via setState), a new tree is generated. The new tree is diffed with the previous tree to compute which operations are needed to update the rendered app.
+
+## 1. Reconciliation vs. Rendering
+**The Concept:** React splits its job into two completely different phases. 
+* **Reconciliation (The Brain):** React looks at your code and calculates *what* needs to change. This is what Fiber does.
+* **Rendering (The Hands):** Another library takes those calculations and actually draws them on the screen.
+
+## Fibre:-
+**Problem:-**Normally, when a computer runs a function, it puts it on a "Call Stack." It cannot stop until the function finishes.they can't stop until they hit the bottom.
+**Sloution:-**React Fiber is like a "Smart To-Do List." Instead of running one giant function, React breaks it into small tasks and checks the time after each one.It breaks a React component down into a JavaScript object. Because it is just an object (and not a running function), React can save it in memory, pause it, and come back to it later.
+## The "Virtual Stack Frame"
+Normally, when a computer runs a function, it "forgets" where it was if it stops. Fiber is special because it saves the "state" of the work in an object (a Fiber).
+
+**Key Points in Simple Terms:**
+**Pause & Resume**: Stop a big task to handle a small, fast task.
+
+**Priority**: Do animations and clicks first; load background data later.
+
+**Abort**: If a user clicks "Cancel," React can literally throw away the "Biryani" half-way through instead of finishing it.
