@@ -192,3 +192,9 @@ function CounterHook() {
 }
 
 export default CounterHook;
+
+---
+ *createRoot()* // Dom create karta hai [serif ose component ko reload kar jo change hoa hai , but browser ka Dom pure page ko hi reload karta hai ]
+
+## React Fibre:-
+- Read from(must) : https://github.com/acdlite/react-fiber-architecture
