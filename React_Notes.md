@@ -146,6 +146,17 @@ function WorkingCounter() {
 
   const increase = () => {
     setCount(count + 1); // React update memory AND the screen
+    /* Agr ye sabhi ko ek sath lekhe tu??
+    setCount(count + 1); 
+    setCount(count + 1); 
+    setCount(count + 1); 
+    setCount(count + 1); 
+    setCount(count + 1); 
+
+    kya hoga?
+    => increment srif ek ka hi hoga , becuaue useState() hamare changes ko bandle me bhajta hai[fibre], sare setcount onego me jayege so sab same count ko increment karenge , agr such me change karna ho tu 
+    setCount(prevCount => prevCount + 1)  x 3
+    */
   };
 
   return (
