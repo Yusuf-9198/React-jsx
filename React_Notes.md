@@ -401,3 +401,16 @@ function App() {
 export default App
 
 ```
+# 03currencyConvertor :-
+* fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`) // generally API ke responce String formate me ate hai, tu hume .json convert karna padhta hai
+        .then((res) => res.json())
+* `useID`
+
+# 04reactrouter:-
+* `npm install react-router-dom`
+* we donot use anchor tag in react , beacuse it referce the whole page but don't want instent of anchor we use Link or NavLink
+
+
+## context API:-
+* similarly rudex, zustand
+* 
