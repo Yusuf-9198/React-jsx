@@ -195,6 +195,75 @@ The most important hook is `useState`. Think of it like a **Variable + a Notific
 * **The Function (`setCounter`):** This is the only way to change the value. When you use this function, it rings a "bell" to tell React: *"Hey! The data changed. Please update the screen!"*
 
 ---
+## 3. Hooks in Depth
+
+### 1. `useState`
+**The Variable + Notification Bell 🔔**
+
+* **The Variable (`state`):** This is the current value or "snapshot."
+* **The Function (`setState`):** The only way to change the value.
+* **The Bell:** When you call the function, it rings a bell to tell React: *"The data changed! Please re-draw the screen!"*
+
+> **Use Case:** Counters, form inputs, toggles (on/off).
+
+---
+
+### 2. `useEffect`
+**The Smart Thermostat (The "Reaction") 🌡️**
+
+* **The Effect:** The code you want to run (the "Reaction").
+* **The Dependencies `[]`:** The "Watching Eyes."
+* **The Logic:** You tell React: *"Watch these specific variables. If they change, run my code immediately."*
+
+> **Use Case:** Fetching data from an API, starting a timer, or manually changing the page title.
+
+---
+
+### 3. `useContext`
+**The Radio Tower (The "Broadcaster") 📡**
+
+* **The Provider:** The tower broadcasting the signal (data) to the whole city (app).
+* **The Hook:** The radio receiver that lets any component "tune in" to the signal without needing wires (props) from its parents.
+
+> **Use Case:** Changing themes (Light/Dark mode), user authentication, or language settings.
+
+---
+
+### 4. `useRef`
+**The Sticky Note (The "Silent Memory") 📌**
+
+* **The `.current` property:** A place to store data that persists between renders.
+* **The Silence:** Unlike `useState`, changing a Ref **does not** ring the notification bell. React won't re-render the screen.
+* **The Hook:** Also used to "grab" an HTML element directly to focus it or measure it.
+
+> **Use Case:** Storing a timer ID, focusing a text input, or remembering a "previous" value.
+
+---
+
+### 5. `useMemo` & `useCallback`
+**The Brain-Freeze Prevention (The "Calculated Answer") 🧠**
+
+* **`useMemo`:** Remembers the **result** of a complex math problem so you don't have to calculate it again.
+* **`useCallback`:** Remembers the **function itself** so it isn't recreated every time the component refreshes.
+
+> **Use Case:** Sorting a massive list of data or optimizing performance in child components.
+
+---
+
+### ⚡ Quick Summary Table
+
+| Hook | Analogy | Why use it? |
+| :--- | :--- | :--- |
+| **`useState`** | Notification Bell | To change what's on the screen. |
+| **`useEffect`** | Smart Thermostat | To react to a change. |
+| **`useContext`** | Radio Tower | To share data globally. |
+| **`useRef`** | Sticky Note | To remember things silently. |
+| **`useMemo`** | Saved Answer | To speed up heavy logic. |
+
+
+---
+*Created with ⚛️ for React Developers.*
+---
 # Class Components vs. Hooks
 
 ### 1. The Class Component Way (The Old Way)
