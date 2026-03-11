@@ -1,7 +1,5 @@
 import React from 'react'
 
-// 1. Capital 'B' 
-// 2. Destructure 'setColour' from the props object
 function BtnColored({ colour, setColour, txtColor = "white" }) {
     return (
         <button

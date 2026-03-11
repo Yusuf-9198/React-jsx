@@ -263,9 +263,9 @@ The most important hook is `useState`. Think of it like a **Variable + a Notific
 
 ---
 ## Some topics:-
-* **StrictMode:** It is basically a 'wrapper' tool that helps you to find bugs early.
+* **`StrictMode`:** It is basically a 'wrapper' tool that helps you to find bugs early.
   A tool for developers. It doesn't show up on the screen, but it warns you about potential bugs and outdated code in your terminal/console.
-*  **CreateRoote:-** It is the bridge between your React code and the actual browser. Browser only understand HTML not React,
+*  **`CreateRoote`:-** It is the bridge between your React code and the actual browser. Browser only understand HTML not React,
  So createRoot finds the actual HTML div (usually with the ID 'root') and tells React: "This is where you are allowed to draw my app."
  It enables 'Concurrent React'. This allows React to prepare multiple versions of your UI at the same time in the background, making the app feel much faster and smoother for users.
   **How?** , In a regular app, if React is busy rendering a huge list of 10,000 items, the browser "freezes." The user can't click buttons or type in a search box until that big list is finished. `createRoot` has these multitasking powers built-in, but they stay locked to keep old apps from breaking.

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import BtnColored from "./component/BtnColored" // Use Capital B
+import BtnColored from "./component/BtnColored"
 
 function App() {
   const [colour, setColour] = useState("olive")
