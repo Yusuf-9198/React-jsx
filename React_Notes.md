@@ -3,7 +3,8 @@
 ## Why Use React?
 * **JavaScript Library:** 
 -React is a specialized library (not a full framework) for building User Interfaces (UI).
-* **Component-Based:** 
+-**SPA** => Single page Application
+* **Component-Based** 
 - It breaks the UI into small, isolated pieces called **Components**, making complex frontends easier to manage.
  **Solving Inconsistency:** 
 - React uses a *Virtual DOM* to efficiently update the UI, ensuring the state of the app and the view always match.
@@ -12,7 +13,7 @@
 ---
 
 ## Core Topics to Master
-1.  **JSX (JavaScript XML):** A syntax extension that allows you to write HTML-like code inside JavaScript.
+1.  **JSX (JavaScript XML):** A syntax extension that allows you to write HTML-like code inside JavaScript. Syntactical Sugar
 2.  **State Management:** Using the `useState` hook to handle data that changes over time (UI manipulation).
 3.  **Components & Props:**
     * **Components:** Small, reusable building blocks of the UI.
@@ -70,12 +71,13 @@ When you build a React application using the **Vite** method, the project is str
 ## 1. The Root Directory
 These files sit outside the `src` folder and handle the project configuration and the browser's entry point.
 
-| File Name | Purpose | How it Links |
-| :--- | :--- | :--- |
-| **`index.html`** | The **Entry Point**. The only HTML file the browser reads. | Contains a `<div id="root"></div>`. It links to JavaScript via a script tag: `<script type="module" src="/src/main.jsx"></script>`. |
-| **`package.json`** | The **Manifest**. Lists metadata, dependencies (React), and scripts. | Defines the commands you run in the terminal, like `npm run dev` to start the server. |
-| **`vite.config.js`** | The **Configuration**. Tells Vite how to process React. | Used by the build tool to handle things like JSX transformation and hot module replacement. |
-| **`node_modules/`** | The **Dependency Library**. Contains the code for all installed packages. | You never edit this; your code simply "imports" logic from here. |
+| File Name               | Purpose                                                                   | How it Links                                                                                                                        |
+|:------------------------|:--------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|
+| **`index.html`**        | The **Entry Point**. The only HTML file the browser reads.                | Contains a `<div id="root"></div>`. It links to JavaScript via a script tag: `<script type="module" src="/src/main.jsx"></script>`. |
+| **`package.json`**      | The **Manifest**. Lists metadata, dependencies (React), and scripts.      | Defines the commands you run in the terminal, like `npm run dev` to start the server.                                               |
+| **`package_lock.json`** | The **Manifest**. Frozen snapshot of your project's exact dependencies.   | Ye humare project ki Dependencies ki dependencies ko store karta, Means like version of React used in this project                  |
+| **`vite.config.js`**    | The **Configuration**. Tells Vite how to process React.                   | Used by the build tool to handle things like JSX transformation and hot module replacement.                                         |
+| **`node_modules/`**     | The **Dependency Library**. Contains the code for all installed packages. | You never edit this; your code simply "imports" logic from here.                                                                    |
 
 ---
 
